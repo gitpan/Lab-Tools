@@ -1,0 +1,8 @@
+--- #YAML:1.0
+name: Lab-Tools
+version: 1.00
+author:
+  - Daniel Schroeer <schroeer@cpan.org>
+abstract: 
+license: perl
+generated_by: Module::Build version 0.2611, without YAML.pm

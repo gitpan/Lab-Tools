@@ -1,0 +1,11 @@
+Build.PL
+lib/Lab/Data/Meta.pm
+lib/Lab/Data/Plotter.pm
+lib/Lab/Data/Writer.pm
+lib/Lab/Data/XMLtree.pm
+lib/Lab/Measurement.pm
+MANIFEST			This list of files
+META.yml
+README
+t/Meta.t
+Makefile.PL
