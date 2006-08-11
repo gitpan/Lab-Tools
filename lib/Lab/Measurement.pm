@@ -1,4 +1,4 @@
-#$Id: Measurement.pm 452 2006-07-03 19:54:51Z schroeer $
+#$Id: Measurement.pm 480 2006-08-11 09:33:26Z schroeer $
 
 package Lab::Measurement;
 
@@ -10,7 +10,7 @@ use Lab::Data::Writer;
 use Lab::Data::Meta;
 use Lab::Data::Plotter;
 
-our $VERSION = sprintf("0.%04d", q$Revision: 452 $ =~ / (\d+) /);
+our $VERSION = sprintf("0.%04d", q$Revision: 480 $ =~ / (\d+) /);
 
 sub new {
     my $proto = shift;
@@ -55,7 +55,7 @@ sub new {
     $writer->log_comment("Sample $params{sample}");
     $writer->log_comment($params{title});
     $writer->log_comment($params{description});
-    $writer->log_comment('Recorded with $Id: Measurement.pm 452 2006-07-03 19:54:51Z schroeer $');
+    $writer->log_comment('Recorded with $Id: Measurement.pm 480 2006-08-11 09:33:26Z schroeer $');
         
     # Meta erzeugen
     my $meta=new Lab::Data::Meta({
@@ -274,7 +274,11 @@ Lab::Measurement - Log, describe and plot data on the fly
 
 =head1 DESCRIPTION
 
-If your measurements turn out to be shitty, it's not because of the software you are using.
+This module simplifies the task of running a measurement, writing the data
+to disk and keeping track of necessary meta information that usually later
+you don't find in your lab book anymore.
+
+If your measurements don't come out nice, it's not because you were using the wrong software.
 
 =head1 CONSTRUCTORS
 
@@ -336,7 +340,7 @@ magic log. deprecated.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Measurement.pm 452 2006-07-03 19:54:51Z schroeer $
+This is $Id: Measurement.pm 480 2006-08-11 09:33:26Z schroeer $
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

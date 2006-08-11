@@ -1,4 +1,4 @@
-#$Id: Writer.pm 464 2006-07-16 01:12:23Z schroeer $
+#$Id: Writer.pm 479 2006-08-11 09:25:07Z schroeer $
 
 package Lab::Data::Writer;
 
@@ -9,7 +9,7 @@ use File::Basename;
 use File::Copy;
 use Lab::Data::Meta;
 
-our $VERSION = sprintf("0.%04d", q$Revision: 464 $ =~ / (\d+) /);
+our $VERSION = sprintf("0.%04d", q$Revision: 479 $ =~ / (\d+) /);
 
 my $default_config = {
     output_data_ext     => "DATA",
@@ -219,13 +219,34 @@ Lab::Data::Writer - Write data to disk
 
 =head1 SYNOPSIS
 
+    use Lab::Data::Writer;
+    
+    my $writer=new Lab::Data::Writer($filename,$config);
+
+    $writer->log_comment("This is my test log");
+
+    my $num=$writer->log_start_block();
+    $writer->log_line(1,2,3);
+
 =head1 DESCRIPTION
 
+This module can be used to log data to a file, comfortably.
+
 =head1 CONSTRUCTOR
+
+=head2 new
+
+    $writer=new Lab::Data::Writer($filename,$config);
+
+See L<configure> below for available configuration options.
 
 =head1 METHODS
 
 =head2 configure
+
+    $writer->configure(\%config);
+
+Available options and default values are
 
     output_data_ext     => "DATA",
     output_meta_ext     => "META",
@@ -234,6 +255,28 @@ Lab::Data::Writer - Write data to disk
     output_line_sep     => "\n",
     output_block_sep    => "\n",
     output_comment_char => "# ",
+
+=head2 get_filename
+
+    ($filename,$filepath)=$writer->get_filename()
+
+=head2 log_comment
+
+    $writer->log_comment($comment);
+
+Writes a comment to the file.
+
+=head2 log_line
+
+    $writer->log_line(@data);
+
+Writes a line of data to the file.
+
+=head2 log_start_block
+
+    $num=$writer->log_start_block();
+
+Starts a new data block.
 
 =head2 import_gpplus(%opts)
 
@@ -248,18 +291,8 @@ exist there.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Writer.pm 464 2006-07-16 01:12:23Z schroeer $
+This is $Id: Writer.pm 479 2006-08-11 09:25:07Z schroeer $
 
-Copyright 2004 Daniel Schröer (L<http://www.danielschroeer.de>)
+Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
-
-=cut
-
-# generalized data loader bräuchte
-# regex
-# der blockseparator matcht (z.B. Leerzeile)
-#   oder Sonderfall FILES (wobei er einfach alle filenames für FILE in liste bekommt)
-#  der Datenzeile matcht und in $1, $2 etc. teilt; gar nicht so einfach
-#  der Kommentarzeile matcht
-

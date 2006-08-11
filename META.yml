@@ -1,8 +1,39 @@
---- #YAML:1.0
+---
 name: Lab-Tools
-version: 1.00
+version: 1.01
 author:
-  - Daniel Schroeer <schroeer@cpan.org>
-abstract: 
+  - 'Daniel Schröer <schroeer@cpan.org>'
+abstract: Tools to obtain and work with data in the laboratory
 license: perl
-generated_by: Module::Build version 0.2611, without YAML.pm
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Cwd: 0
+  Data::Dumper: 0
+  Encode: 0
+  File::Basename: 0
+  File::Copy: 0
+  Time::HiRes: 0
+  XML::DOM: 0
+  XML::Generator: 0
+  encoding::warnings: 0
+provides:
+  Lab::Data::Meta:
+    file: lib/Lab/Data/Meta.pm
+    version: 1.0479
+  Lab::Data::Plotter:
+    file: lib/Lab/Data/Plotter.pm
+    version: 1.0479
+  Lab::Data::Writer:
+    file: lib/Lab/Data/Writer.pm
+    version: 0.0479
+  Lab::Data::XMLtree:
+    file: lib/Lab/Data/XMLtree.pm
+    version: 1.0479
+  Lab::Measurement:
+    file: lib/Lab/Measurement.pm
+    version: 0.0480
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

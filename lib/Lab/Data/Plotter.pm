@@ -1,4 +1,4 @@
-#$Id: Plotter.pm 471 2006-08-01 22:19:41Z schroeer $
+#$Id: Plotter.pm 479 2006-08-11 09:25:07Z schroeer $
 
 package Lab::Data::Plotter;
 
@@ -7,7 +7,7 @@ use Lab::Data::Meta;
 use Data::Dumper;
 use Time::HiRes qw/gettimeofday tv_interval/;
 
-our $VERSION = sprintf("1.%04d", q$Revision: 471 $ =~ / (\d+) /);
+our $VERSION = sprintf("1.%04d", q$Revision: 479 $ =~ / (\d+) /);
 
 sub new {
     my $proto = shift;
@@ -412,9 +412,9 @@ Available options are
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Plotter.pm 471 2006-08-01 22:19:41Z schroeer $
+This is $Id: Plotter.pm 479 2006-08-11 09:25:07Z schroeer $
 
-Copyright 2004 Daniel Schröer (L<http://www.danielschroeer.de>)
+Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
