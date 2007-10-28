@@ -1,6 +1,6 @@
 ---
 name: Lab-Tools
-version: 1.01
+version: 1.2
 author:
   - 'Daniel Schröer <schroeer@cpan.org>'
 abstract: Tools to obtain and work with data in the laboratory
@@ -20,20 +20,20 @@ requires:
 provides:
   Lab::Data::Meta:
     file: lib/Lab/Data/Meta.pm
-    version: 1.0479
+    version: 1.0000
   Lab::Data::Plotter:
     file: lib/Lab/Data/Plotter.pm
-    version: 1.0479
+    version: 1.0000
   Lab::Data::Writer:
     file: lib/Lab/Data/Writer.pm
-    version: 0.0479
+    version: 0.0000
   Lab::Data::XMLtree:
     file: lib/Lab/Data/XMLtree.pm
-    version: 1.0479
+    version: 1.0000
   Lab::Measurement:
     file: lib/Lab/Measurement.pm
-    version: 0.0480
-generated_by: Module::Build version 0.2805
+    version: 0.0000
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

@@ -1,4 +1,4 @@
-#$Id: Plotter.pm 479 2006-08-11 09:25:07Z schroeer $
+#$Id: Plotter.pm 516 2006-09-28 14:59:28Z schroeer $
 
 package Lab::Data::Plotter;
 
@@ -7,7 +7,7 @@ use Lab::Data::Meta;
 use Data::Dumper;
 use Time::HiRes qw/gettimeofday tv_interval/;
 
-our $VERSION = sprintf("1.%04d", q$Revision: 479 $ =~ / (\d+) /);
+our $VERSION = sprintf("1.%04d", q$Revision$ =~ / (\d+) /);
 
 sub new {
     my $proto = shift;
@@ -184,6 +184,7 @@ sub _start_plot {
             my $cbmin=(defined $self->{meta}->axis_min($cbaxis)) ? $self->{meta}->axis_min($cbaxis) : "*";
             my $cbmax=(defined $self->{meta}->axis_max($cbaxis)) ? $self->{meta}->axis_max($cbaxis) : "*";
             $gp.="set cbrange [$cbmin:$cbmax]\n";
+            $gp.="set zrange [$cbmin:$cbmax]\n" if ($self->{meta}->plot_logscale($plot));
         }
     }
     
@@ -207,14 +208,14 @@ sub _start_plot {
             $screen-=0.025;$screen=0.13 if (abs($screen-0.865)<0.001);
         }
     
-        if ($self->{meta}->plot_label($plot)) {
-            my @labels=$self->{meta}->plot_label($plot);
-            for (@labels) {
-                my $text=$_->{text};
-                my $x=$_->{x};
-                my $y=$_->{y};
-                $gp.=qq(set label "$text" at $x,$y center front\n);
-            }
+    }
+    if ($self->{meta}->plot_label($plot)) {
+        my @labels=$self->{meta}->plot_label($plot);
+        for (@labels) {
+            my $text=$_->{text};
+            my $x=$_->{x};
+            my $y=$_->{y};
+            $gp.=qq(set label "$text" at $x,$y center front\n);
         }
     }
     
@@ -412,7 +413,7 @@ Available options are
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Plotter.pm 479 2006-08-11 09:25:07Z schroeer $
+This is $Id: Plotter.pm 516 2006-09-28 14:59:28Z schroeer $
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

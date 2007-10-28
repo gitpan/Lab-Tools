@@ -1,4 +1,4 @@
-#$Id: XMLtree.pm 479 2006-08-11 09:25:07Z schroeer $
+#$Id: XMLtree.pm 532 2006-10-09 16:27:15Z schroeer $
 
 #wird wohl auf die selbe architektur wie
 #bei den ganzen rekursiven functionen
@@ -54,9 +54,10 @@ our @ISA = qw(Exporter);
 use XML::DOM;
 use XML::Generator ();
 use Data::Dumper;
+use XML::Twig;
 use Encode;
 use vars qw($VERSION);
-$VERSION = sprintf("1.%04d", q$Revision: 479 $ =~ / (\d+) /);
+$VERSION = sprintf("1.%04d", q$Revision$ =~ / (\d+) /);
 
 our $AUTOLOAD;
 
@@ -120,11 +121,22 @@ sub save_xml {
     my $data=shift;
         #warum nicht $self?????
     my $rootname=shift;
-    my $generator = XML::Generator->new(pretty  => 0,escape=>'high-bit',conformance => 'strict');
-    open FILE,">$filename" || die;
-        print FILE $generator->xmldecl(encoding=>'ISO-8859-1');
-        print FILE $generator->$rootname(@{_write_node_list($generator,$self->{___declaration},$data)});
-    close FILE;
+    my $generator = XML::Generator->new(
+        pretty      => 0,
+        escape      => 'high-bit',
+        conformance => 'strict'
+    );
+    my $t = XML::Twig->new(
+        pretty_print  => 'indented',
+        keep_encoding => 1,
+    );
+
+    $t->parse(
+        join "",
+            $generator->xmldecl(encoding=>'ISO-8859-1'),
+            $generator->$rootname(@{_write_node_list($generator,$self->{___declaration},$data)}),
+    );
+    $t->print_to_file($filename);
 }
 
 sub save_yaml {
@@ -682,7 +694,7 @@ Lab::XMLtree can use YAML (L<YAML>) for data storage.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: XMLtree.pm 479 2006-08-11 09:25:07Z schroeer $
+This is $Id: XMLtree.pm 532 2006-10-09 16:27:15Z schroeer $
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 
