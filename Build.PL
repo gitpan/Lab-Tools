@@ -1,12 +1,11 @@
 #!/usr/bin/perl
-#$Id: Build.PL 85 2005-11-10 23:35:43Z schroeer $
 
 use strict;
 use Module::Build;
 
 my $build=Module::Build->new(
     module_name         => 'Lab::Tools', 
-    dist_version        => '1.2',
+    dist_version        => '1.3',
     dist_abstract       => 'Tools to obtain and work with data in the laboratory',
     license             => 'perl',
     requires            => {

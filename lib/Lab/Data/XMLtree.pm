@@ -57,7 +57,7 @@ use Data::Dumper;
 use XML::Twig;
 use Encode;
 use vars qw($VERSION);
-$VERSION = sprintf("1.%04d", q$Revision$ =~ / (\d+) /);
+$VERSION = sprintf("1.%04d", q$Revision: 532 $ =~ / (\d+) /);
 
 our $AUTOLOAD;
 

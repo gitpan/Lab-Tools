@@ -10,7 +10,7 @@ use Lab::Data::Writer;
 use Lab::Data::Meta;
 use Lab::Data::Plotter;
 
-our $VERSION = sprintf("0.%04d", q$Revision$ =~ / (\d+) /);
+our $VERSION = sprintf("0.%04d", q$Revision: 495 $ =~ / (\d+) /);
 
 sub new {
     my $proto = shift;
