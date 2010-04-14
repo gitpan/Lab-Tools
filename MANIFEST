@@ -1,4 +1,3 @@
-Build.bat
 Build.PL
 lib/Lab/Data/Meta.pm
 lib/Lab/Data/Plotter.pm
@@ -6,6 +5,7 @@ lib/Lab/Data/Writer.pm
 lib/Lab/Data/XMLtree.pm
 lib/Lab/Measurement.pm
 MANIFEST			This list of files
+META.yml
 README
 scripts/hp_read.pl
 scripts/knick_goto.pl
@@ -13,5 +13,3 @@ scripts/metainfo.pl
 scripts/plotter.pl
 scripts/yoko_goto.pl
 t/Meta.t
-Makefile.PL
-META.yml
