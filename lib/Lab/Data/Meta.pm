@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-#$Id: Meta.pm 479 2006-08-11 09:25:07Z schroeer $
+#$Id$
 
 package Lab::Data::Meta;
 
@@ -14,7 +14,7 @@ require Exporter;
 
 our @ISA = qw(Exporter Lab::Data::XMLtree);
 
-our $VERSION = sprintf("1.%04d", q$Revision: 479 $ =~ / (\d+) /);
+our $VERSION="1.41";
 
 our $AUTOLOAD;
 
@@ -276,7 +276,7 @@ Currently, C<Lab::Data::Meta> supports the following bits of meta information:
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Meta.pm 479 2006-08-11 09:25:07Z schroeer $
+This is $Id$
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

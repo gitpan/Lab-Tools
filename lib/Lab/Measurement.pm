@@ -1,4 +1,4 @@
-#$Id: Measurement.pm 495 2006-08-14 15:46:01Z schroeer $
+#$Id$
 
 package Lab::Measurement;
 
@@ -10,7 +10,7 @@ use Lab::Data::Writer;
 use Lab::Data::Meta;
 use Lab::Data::Plotter;
 
-our $VERSION = sprintf("0.%04d", q$Revision: 495 $ =~ / (\d+) /);
+our $VERSION="1.41";
 
 sub new {
     my $proto = shift;
@@ -55,7 +55,7 @@ sub new {
     $writer->log_comment("Sample $params{sample}");
     $writer->log_comment($params{title});
     $writer->log_comment($params{description});
-    $writer->log_comment('Recorded with $Id: Measurement.pm 495 2006-08-14 15:46:01Z schroeer $');
+    $writer->log_comment('Recorded with $Id$');
         
     # Meta erzeugen
     my $meta=new Lab::Data::Meta({
@@ -340,7 +340,7 @@ magic log. deprecated.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Measurement.pm 495 2006-08-14 15:46:01Z schroeer $
+This is $Id$
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

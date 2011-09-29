@@ -1,4 +1,4 @@
-#$Id: Writer.pm 479 2006-08-11 09:25:07Z schroeer $
+#$Id$
 
 package Lab::Data::Writer;
 
@@ -9,11 +9,11 @@ use File::Basename;
 use File::Copy;
 use Lab::Data::Meta;
 
-our $VERSION = sprintf("0.%04d", q$Revision: 479 $ =~ / (\d+) /);
+our $VERSION="1.41";
 
 my $default_config = {
-    output_data_ext     => "DATA",
-    output_meta_ext     => "META",
+    output_data_ext     => "dat",
+    output_meta_ext     => "meta",
 
     output_col_sep      => "\t",
     output_line_sep     => "\n",
@@ -248,8 +248,8 @@ See L<configure> below for available configuration options.
 
 Available options and default values are
 
-    output_data_ext     => "DATA",
-    output_meta_ext     => "META",
+    output_data_ext     => "dat",
+    output_meta_ext     => "meta",
 
     output_col_sep      => "\t",
     output_line_sep     => "\n",
@@ -291,7 +291,7 @@ exist there.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Writer.pm 479 2006-08-11 09:25:07Z schroeer $
+This is $Id$
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

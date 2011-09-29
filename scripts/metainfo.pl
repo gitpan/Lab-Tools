@@ -93,7 +93,7 @@ This information is printed.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: metainfo.pl 474 2006-08-10 20:51:11Z schroeer $.
+This is $Id$.
 
 Copyright 2004 Daniel Schröer.
 

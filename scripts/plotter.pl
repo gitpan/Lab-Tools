@@ -121,7 +121,7 @@ Also show axis descriptions in plot.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: plotter.pl 464 2006-07-16 01:12:23Z schroeer $.
+This is $Id$.
 
 Copyright 2004 Daniel Schröer.
 

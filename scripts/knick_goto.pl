@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#$Id: knick_goto.pl 474 2006-08-10 20:51:11Z schroeer $
+#$Id$
 
 use strict;
 use Lab::Instrument::KnickS252;

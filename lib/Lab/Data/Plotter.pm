@@ -1,4 +1,4 @@
-#$Id: Plotter.pm 516 2006-09-28 14:59:28Z schroeer $
+#$Id$
 
 package Lab::Data::Plotter;
 
@@ -7,7 +7,7 @@ use Lab::Data::Meta;
 use Data::Dumper;
 use Time::HiRes qw/gettimeofday tv_interval/;
 
-our $VERSION = sprintf("1.%04d", q$Revision: 516 $ =~ / (\d+) /);
+our $VERSION="1.41";
 
 sub new {
     my $proto = shift;
@@ -413,7 +413,7 @@ Available options are
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: Plotter.pm 516 2006-09-28 14:59:28Z schroeer $
+This is $Id$
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 

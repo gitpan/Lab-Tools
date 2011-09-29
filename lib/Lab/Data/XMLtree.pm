@@ -1,4 +1,4 @@
-#$Id: XMLtree.pm 532 2006-10-09 16:27:15Z schroeer $
+#$Id$
 
 #wird wohl auf die selbe architektur wie
 #bei den ganzen rekursiven functionen
@@ -57,7 +57,7 @@ use Data::Dumper;
 use XML::Twig;
 use Encode;
 use vars qw($VERSION);
-$VERSION = sprintf("1.%04d", q$Revision: 532 $ =~ / (\d+) /);
+$VERSION="1.41";
 
 our $AUTOLOAD;
 
@@ -694,7 +694,7 @@ Lab::XMLtree can use YAML (L<YAML>) for data storage.
 
 =head1 AUTHOR/COPYRIGHT
 
-This is $Id: XMLtree.pm 532 2006-10-09 16:27:15Z schroeer $
+This is $Id$
 
 Copyright 2004-2006 Daniel Schröer (L<http://www.danielschroeer.de>)
 
